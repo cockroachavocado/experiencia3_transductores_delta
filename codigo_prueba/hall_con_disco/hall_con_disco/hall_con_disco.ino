@@ -1,7 +1,7 @@
 
 const byte pinHall = 3;
 
-const float pulsosPorVuelta = 1.0;
+const float pulsosPorVuelta = 8.0;//son 8 imanes
 const unsigned long intervalo = 1000;
 
 volatile unsigned long pulsos = 0;
