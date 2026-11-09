@@ -1,0 +1,1 @@
+Este código es uno de los ejemplos que trae Arduino IDLE por defecto
