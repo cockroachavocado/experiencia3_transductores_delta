@@ -1,32 +1,20 @@
 #include <Wire.h>
 #include <VL53L0X.h>
 
-// NOTA: hace falta probar el inductivo
-
-
-
-
-
-
-
-
-
-// ---------------- PWM / SSR ----------------
 const int pinRele = 2;
 int dutyPorcentaje = 0;
-const unsigned long periodoTotalMs = 20;       // 50 Hz
+const unsigned long periodoTotalMs = 20;     
 
-// ---------------- Hall US1881 (interrupción) ----------------
 const int pinHall = 3;
-const int PULSOS_POR_REV_HALL = 2;             // nº total de imanes (polaridades alternadas N/S)
-const unsigned long TIEMPO_MIN_HALL = 500;     // µs
+const int PULSOS_POR_REV_HALL = 8;             
+const unsigned long TIEMPO_MIN_HALL = 500; 
 
 volatile unsigned long ultimoHall = 0;
 volatile unsigned long intervaloHall = 0;
 
 // ---------------- Inductivo SN04-N (sondeo) ----------------
 const int pinInductivo = 4;
-const int PULSOS_POR_REV_IND = 1;              // piezas metálicas por vuelta
+const int PULSOS_POR_REV_IND = 8;              // piezas metálicas por vuelta
 const unsigned long TIEMPO_MIN_IND = 1000;     // µs
 
 unsigned long ultimoInd = 0;
@@ -36,8 +24,8 @@ int estadoAnteriorInd;
 // ---------------- Tacómetro ToF ----------------
 VL53L0X sensor;
 const int NUM_AGUJEROS = 8;
-const float DISTANCIA_MIN = 10.0;              // mm
-const float DISTANCIA_MAX = 100.0;             // mm
+const float DISTANCIA_MIN = 4;              // mm
+const float DISTANCIA_MAX = 7;             // mm
 const unsigned long TIEMPO_MIN_PULSO = 2000;   // µs
 
 unsigned long ultimoPulsoToF = 0;
